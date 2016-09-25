@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style> body {font-family: Book Antiqua}    </style>
+    <title>MyAssignment 1</title>
+  </head>
+  <body ng-app="MyAssignment1">
+      <div ng-controller="MyAssignment1Controller">
+        <h1>Enter the Items that you eat for lunch separated by commas</h1>
+          <div>
+            <input type="text" ng-model="itemString">&nbsp;&nbsp; An empty item, i.e., <b>`, ,`</b> is not considered as an item towards to the count<br/><br/>
+            <input type="button" value="Check If Too Much" ng-click="findNoofitems();"><br/><br/>
+            {{responseMsg}}
+          </div>
+      </div>
+
+  </body>
+</html>

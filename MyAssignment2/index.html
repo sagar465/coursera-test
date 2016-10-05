@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style> body {font-family: Book Antiqua}    </style>
+    <title>MyAssignment 2</title>
+  </head>
+  <body ng-app="ShoppingListCheckOff">
+    <h1>Check Off Shopping List Application</h1>
+      <div ng-controller="ToBuyShoppingController as buyList">
+          <h3 ng-style={"color":"blue"}>To buy</h3>
+          <ol>
+            <li ng-repeat="buyItem in buyList.toBuyitems">Buy {{buyItem.quantity}} {{buyItem.name}}(s)
+                <input type="button" value="Bought" ng-click="buyList.boughtCall($index)">
+            </li>
+          </ol>
+          <h5 ng-if="!buyList.toBuyitems.length">{{buyList.buyMessage}}</h5>
+      </div>
+
+      <div ng-controller="AlreadyBoughtShoppingController as boughtList">
+        <h3 ng-style={"color":"blue"}>Already Bought</h3>
+        <ol>
+          <li ng-repeat="boughtItem in boughtList.boughtItems">Bought {{boughtItem.quantity}} {{boughtItem.name}}(s)</li>
+        </ol>
+        <h5 ng-if="!boughtList.boughtItems.length">{{boughtList.boughtMessage}}</h5>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="menusearch.service.js"></script>
+    <script src="narrow.controller.js"></script>
+    <style> body { font-size: 1.2em; }</style>
+    <!--<style src="bootstrap.min.css"></style>-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Restaurant Menu Search</title>
+  </head>
+<!-- <body ng-app="NarrowItDownApp" ng-style={"margin-left":"50px"}>
+  <h1 ng-style={"color":"darkblue"}>Narrow Down Your Chinese Menu Choice</h1>
+    <div ng-controller="NarrowItDownController as list">
+      <input type="text" ng-model="list.searchContent" class="input-lg" placeholder="Search Menu">
+      <button ng-click="list.narrowItDown()" class="btn btn-primary">Narrow It Down For me!</button>
+      <br><br>
+      <ul>
+        <li ng-repeat="item in menu.foundItems">
+                {{item.name}}, {{item.short_name}}, {{item.description}}
+        </li>
+      </ul>
+      <found-items  found="list.foundItems" on-remove="list.removeItem(index)"></found-items>
+
+</body> -->
+
+<body ng-app="NarrowItDownApp" ng-style={"margin-left":"50px"}>
+  <h1 ng-style={"color":"darkblue"}>Narrow Down Your Chinese Menu Choice</h1>
+  <div ng-controller="NarrowItDownController as list" ng-style={'float':'left'}>
+    <input type="text" ng-model="list.searchContent" class="input-lg" placeholder="Search Menu">
+    <button ng-click="list.narrowItDown()" class="btn btn-primary">Narrow It Down For me!</button>
+<br>
+      <found-items found="list.foundItems"  On-remove="list.removeItem(index)"> </found-items>
+  </div>
+</body>
+
+  </html>

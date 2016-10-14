@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<h3 ng-if="list.empty">Nothing Found!</h3>
+<h3>Narrowed Menu list</h3>
+  <table ng-style={"width":"1000px"}>
+  <th>
+    <tr>
+      <td><b>Item Name</b></td>
+      <td><b>Item ShortName</b></td>
+      <td><b>Item Description</b></td>
+    </tr>
+  </th>
+  <tr ng-repeat="item in list.found">
+        <td ng-style={"width":"1000px"}>{{item.name}}</td>
+        <td ng-style={"width":"1500px","align":"centre"}>{{item.short_name}}</td>
+        <td ng-style={"width":"10000px"}>{{item.description}}</td>
+        <td ><button class="btn btn-primary" ng-click="list.onRemove({index:$index})">Don't want this one!</button></td>
+  </tr>
+</table>
